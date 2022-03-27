@@ -3,6 +3,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:gamestore_app/models/category_model.dart';
+import 'package:gamestore_app/models/models.dart';
 
 import '../../widget/widgets.dart';
 
@@ -19,22 +20,37 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: CustomAppBar(title: "Gamer's Quest Nepal"),
       bottomNavigationBar: CustomNavBar(),
-      body: Container(
-          child: CarouselSlider(
-        //animated top slider to display gamer products
-        options: CarouselOptions(
-          aspectRatio: 1.5,
-          viewportFraction: 0.9,
-          enlargeCenterPage: true,
-          enlargeStrategy: CenterPageEnlargeStrategy.height,
-          enableInfiniteScroll: false,
-          initialPage: 2,
-          autoPlay: true,
-        ),
-        items: Category.categories
-            .map((category) => HeroCarouselCard(category: category))
-            .toList(),
-      )),
+      body: Column(
+        children: [
+          Container(
+            child: CarouselSlider(
+              //animated top slider to display gamer products
+              options: CarouselOptions(
+                aspectRatio: 1.5,
+                viewportFraction: 0.9,
+                enlargeCenterPage: true,
+                enlargeStrategy: CenterPageEnlargeStrategy.height,
+                enableInfiniteScroll: false,
+                initialPage: 2,
+                autoPlay: true,
+              ),
+              items: Category.categories
+                  .map((category) => HeroCarouselCard(category: category))
+                  .toList(),
+            ),
+          ),
+          SectionTitle(title: 'RECOMMENDED'),
+          ProductCarousel(
+              products: Product.products
+                  .where((product) => product.isRecommended)
+                  .toList()),
+          SectionTitle(title: 'MOST POPULAR'),
+          ProductCarousel(
+              products: Product.products
+                  .where((product) => product.isPopular)
+                  .toList()),
+        ],
+      ),
     );
   }
 }
