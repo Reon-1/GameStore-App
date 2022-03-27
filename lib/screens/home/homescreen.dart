@@ -1,6 +1,8 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors
 
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:gamestore_app/models/category_model.dart';
 
 import '../../widget/widgets.dart';
 
@@ -17,6 +19,22 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: CustomAppBar(title: "Gamer's Quest Nepal"),
       bottomNavigationBar: CustomNavBar(),
+      body: Container(
+          child: CarouselSlider(
+        //animated top slider to display gamer products
+        options: CarouselOptions(
+          aspectRatio: 1.5,
+          viewportFraction: 0.9,
+          enlargeCenterPage: true,
+          enlargeStrategy: CenterPageEnlargeStrategy.height,
+          enableInfiniteScroll: false,
+          initialPage: 2,
+          autoPlay: true,
+        ),
+        items: Category.categories
+            .map((category) => HeroCarouselCard(category: category))
+            .toList(),
+      )),
     );
   }
 }

@@ -7,15 +7,18 @@ ThemeData theme() {
     scaffoldBackgroundColor: Colors.white,
     fontFamily: 'Unkempt',
     textTheme: textTheme(),
-  );
+  );   //custom theme data 
 }
 
-TextTheme textTheme() {
-  return TextTheme(
+TextTheme textTheme() { 
+  return TextTheme(                         //headlines can be called to get thier properties
     headline1: TextStyle(
         color: Colors.black, fontSize: 32, fontWeight: FontWeight.bold),
     headline2: TextStyle(
-        color: Colors.black, fontSize: 20, fontWeight: FontWeight.bold),
+        color: Colors.black,
+        fontFamily: 'RobotoSlab-Regular',
+        fontSize: 20,
+        fontWeight: FontWeight.bold),
     headline3: TextStyle(
         color: Colors.black, fontSize: 18, fontWeight: FontWeight.bold),
     headline4: TextStyle(
