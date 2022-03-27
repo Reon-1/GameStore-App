@@ -20,36 +20,38 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: CustomAppBar(title: "Gamer's Quest Nepal"),
       bottomNavigationBar: CustomNavBar(),
-      body: Column(
-        children: [
-          Container(
-            child: CarouselSlider(
-              //animated top slider to display gamer products
-              options: CarouselOptions(
-                aspectRatio: 1.5,
-                viewportFraction: 0.9,
-                enlargeCenterPage: true,
-                enlargeStrategy: CenterPageEnlargeStrategy.height,
-                enableInfiniteScroll: false,
-                initialPage: 2,
-                autoPlay: true,
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Container(
+              child: CarouselSlider(
+                //animated top slider to display gamer products
+                options: CarouselOptions(
+                  aspectRatio: 1.5,
+                  viewportFraction: 0.9,
+                  enlargeCenterPage: true,
+                  enlargeStrategy: CenterPageEnlargeStrategy.height,
+                  enableInfiniteScroll: false,
+                  initialPage: 2,
+                  autoPlay: true,
+                ),
+                items: Category.categories
+                    .map((category) => HeroCarouselCard(category: category))
+                    .toList(),
               ),
-              items: Category.categories
-                  .map((category) => HeroCarouselCard(category: category))
-                  .toList(),
             ),
-          ),
-          SectionTitle(title: 'RECOMMENDED'),
-          ProductCarousel(
-              products: Product.products
-                  .where((product) => product.isRecommended)
-                  .toList()),
-          SectionTitle(title: 'MOST POPULAR'),
-          ProductCarousel(
-              products: Product.products
-                  .where((product) => product.isPopular)
-                  .toList()),
-        ],
+            SectionTitle(title: 'RECOMMENDED'),
+            ProductCarousel(
+                products: Product.products
+                    .where((product) => product.isRecommended)
+                    .toList()),
+            SectionTitle(title: 'MOST POPULAR'),
+            ProductCarousel(
+                products: Product.products
+                    .where((product) => product.isPopular)
+                    .toList()),
+          ],
+        ),
       ),
     );
   }
