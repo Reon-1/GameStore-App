@@ -3,13 +3,17 @@ import 'package:gamestore_app/models/models.dart';
 
 class ProductCard extends StatelessWidget {
   final Product product;
+  final double widthFactor;
+
   const ProductCard({
     required this.product,
+    this.widthFactor = 2.5,
     Key? key,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final double widthValue = MediaQuery.of(context).size.width / widthFactor;
     return Stack(
       children: [
         Container(

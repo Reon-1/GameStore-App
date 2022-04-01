@@ -12,19 +12,20 @@ class Category extends Equatable {
   });
 
   @override
-  List<Object?> get props => [name, imageUrl]; //has lists of games to show on slider
+  List<Object?> get props =>
+      [name, imageUrl]; //has lists of games to show on slider
   static List<Category> categories = [
     Category(
-        name: 'Elden Ring',
+        name: 'RPG',
         imageUrl:
             'https://image.api.playstation.com/vulcan/ap/rnd/202110/2000/aGhopp3MHppi7kooGE2Dtt8C.png'),
     Category(
-        name: 'Horizon Forbidden West',
+        name: 'Open World Adventure',
         imageUrl:
             'https://upload.wikimedia.org/wikipedia/en/6/69/Horizon_Forbidden_West_cover_art.jpg'),
     Category(
-        name: 'Dying Light 2',
+        name: 'FPS',
         imageUrl:
             'https://gamesave.store/wp-content/uploads/2022/01/dying_light_2_pc_gamesave_1.jpg'),
-  ]; 
+  ];
 }

@@ -30,6 +30,7 @@ class Product extends Equatable {
         price,
       ];
 
+//add prodcuts based on category, price and more
   static List<Product> products = [
     Product(
         name: 'ApexLegends',
@@ -44,7 +45,7 @@ class Product extends Equatable {
         category: 'FPS',
         imageUrl:
             'https://cdn.mos.cms.futurecdn.net/CaBuWPqTa2jyxVit8AzH9E-970-80.jpg.webp',
-        isPopular: true,
+        isPopular: false,
         isRecommended: false,
         price: 3500),
     Product(
@@ -52,7 +53,7 @@ class Product extends Equatable {
         category: 'FPS',
         imageUrl:
             'https://cdn.mos.cms.futurecdn.net/rWtRjHfbhDKEFyocPjf6NT-970-80.jpg.webp',
-        isPopular: true,
+        isPopular: false,
         isRecommended: true,
         price: 3000),
     Product(
@@ -63,5 +64,21 @@ class Product extends Equatable {
         isPopular: true,
         isRecommended: true,
         price: 4000),
+    Product(
+        name: 'TEST1',
+        category: 'RPG',
+        imageUrl:
+            'https://cdn.mos.cms.futurecdn.net/ag5MuTMfDLkvJLJXnpMgPh-970-80.jpg.webp',
+        isPopular: false,
+        isRecommended: false,
+        price: 99999),
+    Product(
+        name: 'TEST2',
+        category: 'RPG',
+        imageUrl:
+            'https://cdn.mos.cms.futurecdn.net/ag5MuTMfDLkvJLJXnpMgPh-970-80.jpg.webp',
+        isPopular: true,
+        isRecommended: true,
+        price: 99999),
   ];
 }
