@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:gamestore_app/models/category_model.dart';
+import 'package:gamestore_app/models/models.dart';
 import 'package:gamestore_app/screens/screens.dart';
 import 'package:gamestore_app/screens/wishlist/wishlist_screen.dart';
 
@@ -16,7 +17,8 @@ class AppRouter {
       case CartScreen.routeName:
         return CartScreen.route();
       case ProductScreen.routeName:
-        return ProductScreen.route();
+        return ProductScreen.route(product: settings.arguments as Product);
+      //provies names for the selected
       case CatalogScreen.routeName:
         return CatalogScreen.route(category: settings.arguments as Category);
       case WishlistScreen.routeName:
