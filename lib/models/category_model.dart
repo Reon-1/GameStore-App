@@ -20,7 +20,7 @@ class Category extends Equatable {
         imageUrl:
             'https://image.api.playstation.com/vulcan/ap/rnd/202110/2000/aGhopp3MHppi7kooGE2Dtt8C.png'),
     Category(
-        name: 'Open World Adventure',
+        name: 'Adventure',
         imageUrl:
             'https://upload.wikimedia.org/wikipedia/en/6/69/Horizon_Forbidden_West_cover_art.jpg'),
     Category(

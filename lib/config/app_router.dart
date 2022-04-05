@@ -1,10 +1,8 @@
 // ignore_for_file: prefer_const_constructors, no_duplicate_case_values, avoid_print
 
 import 'package:flutter/material.dart';
-import 'package:gamestore_app/models/category_model.dart';
 import 'package:gamestore_app/models/models.dart';
 import 'package:gamestore_app/screens/screens.dart';
-import 'package:gamestore_app/screens/wishlist/wishlist_screen.dart';
 
 class AppRouter {
   static Route onGenerateRoute(RouteSettings settings) {

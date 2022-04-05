@@ -2,7 +2,6 @@
 
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:gamestore_app/models/category_model.dart';
 import 'package:gamestore_app/models/models.dart';
 
 import '../../widget/widgets.dart';

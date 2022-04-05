@@ -1,7 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:gamestore_app/models/category_model.dart';
 import 'package:gamestore_app/models/models.dart';
 
 import '../../widget/widgets.dart';
